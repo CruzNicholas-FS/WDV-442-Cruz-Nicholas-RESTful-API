@@ -1,0 +1,24 @@
+{
+  "name": "wdv-442-cruz-nicholas-restful-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CruzNicholas-FS/WDV-442-Cruz-Nicholas-RESTful-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CruzNicholas-FS/WDV-442-Cruz-Nicholas-RESTful-API/issues"
+  },
+  "homepage": "https://github.com/CruzNicholas-FS/WDV-442-Cruz-Nicholas-RESTful-API#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  }
+}
