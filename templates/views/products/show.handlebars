@@ -1,0 +1,17 @@
+{{> title}}
+
+{{> nav}}
+
+<ul>
+    <li>
+        <div><label>Id: </label> {{product.id}}</div>
+        <div><label>Name: </label> {{product.name}}</div>
+        <div><label>Price: </label> {{product.price}}</div>
+    </li>
+</ul>
+<p>
+    <a href="/products/{{product.id}}/edit">Edit</a>
+    <a href="/products/{{product.id}}/delete">Delete</a>
+</p>
+
+{{> footer}}

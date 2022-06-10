@@ -1,5 +1,5 @@
 let products = [
-    {"id":"1", "type":"jersey", "name":"Team Liquid '22 Jersey"}
+    {"id":"1", "type":"jersey", "name":"Team Liquid '22 Jersey", "price":60}
 ];
 
 const all = () =>{
@@ -11,8 +11,12 @@ const find = (id) => {
 }
 
 const create = (product) =>{
-    products = [...products, product];
-    return products;
+    let id;
+    if (products.length === 0) {
+        id = "1";
+    } else {id=Number(products[products.length-1].id)+1+"";}
+    products = [...products, {id, ...product}];
+    return products[products.length-1];
 }
 
 
