@@ -1,0 +1,15 @@
+<form method="POST" action="/products/{{#if id}}{{id}}{{/if}}">
+
+    {{#if id}}
+    <input type="hidden" name="id" value="{{id}}" />
+    {{/if}}
+    <div>
+        <label for="name">Name:</label> <input name="name" type="text" value="{{name}}" />
+    </div>
+    <div>
+        <label for="price">Price:</label> <input name="price" type="number" value="{{price}}" />
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>

@@ -1,0 +1,17 @@
+{{> title}}
+
+{{> nav}}
+
+<ul>
+    {{#each products}}
+    <li>
+        {{this.name}} ${{this.price}} -
+        <a href="/products/{{this.id}}">Edit</a>
+        <a href="/products/{{this.id}}/delete">Delete</a>
+    </li>
+    {{/each}}
+</ul>
+
+<a href="/products/new">Create New product</a>
+
+{{> footer}}
