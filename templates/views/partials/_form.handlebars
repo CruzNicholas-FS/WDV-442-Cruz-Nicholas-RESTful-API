@@ -1,13 +1,10 @@
-<form method="POST" action="/products/{{#if id}}{{id}}{{/if}}">
+<form method="POST" action="/products/{{#if dataValues.id}}{{dataValues.id}}{{/if}}">
 
     {{#if id}}
-    <input type="hidden" name="id" value="{{id}}" />
+    <input type="hidden" name="id" value="{{dataValues.id}}" />
     {{/if}}
     <div>
-        <label for="name">Name:</label> <input name="name" type="text" value="{{name}}" />
-    </div>
-    <div>
-        <label for="price">Price:</label> <input name="price" type="number" value="{{price}}" />
+        <label for="name">Name:</label> <input name="name" type="text" value="{{dataValues.name}}" />
     </div>
     <div>
         <input type="submit" value="Submit" />

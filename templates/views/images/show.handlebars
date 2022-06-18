@@ -1,0 +1,17 @@
+{{> title}}
+
+{{> nav}}
+
+<h1>About Image #{{image.dataValues.id}}</h1>
+<ul>
+    <li>
+        <label>Id: </label> {{image.dataValues.id}}
+        <label>Assigned Variant: </label> {{variant.dataValues.name}}
+    </li>
+</ul>
+<p>
+    <a href="/images/{{image.dataValues.id}}/edit">Edit</a>
+    <a href="/images/{{image.dataValues.id}}/delete">Delete</a>
+</p>
+
+{{> footer}}
