@@ -1,0 +1,17 @@
+{{> title}}
+
+{{> nav}}
+
+<ul>
+    {{#each images}}
+    <li>
+        {{this.dataValues.id}} -
+        <a href="/images/{{this.dataValues.id}}">Edit</a>
+        <a href="/images/{{this.dataValues.id}}/delete">Delete</a>
+    </li>
+    {{/each}}
+</ul>
+
+<a href="/images/new">Create Image</a>
+
+{{> footer}}

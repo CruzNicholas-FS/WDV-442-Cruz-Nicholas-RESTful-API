@@ -1,0 +1,23 @@
+<form method="POST" action="/variants/{{#if variant.dataValues.id}}{{variant.dataValues.id}}{{/if}}">
+
+    {{#if variant.dataValues.id}}
+    <input type="hidden" name="id" value="{{variant.dataValues.id}}" />
+    {{/if}}
+    <div>
+        <label for="name">Name:</label> <input name="name" type="text" value="{{variant.dataValues.name}}" />
+    </div>
+    <div>
+        <label>Product</label>
+        <select name="ProductId">
+            {{#each products}}
+            <option value="{{this.dataValues.id}}" {{#if (isEqual this.dataValues.id ../variant.dataValues.productId )
+                }} selected {{/if}}>
+                {{this.dataValues.name}}
+            </option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>

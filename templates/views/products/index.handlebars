@@ -5,9 +5,9 @@
 <ul>
     {{#each products}}
     <li>
-        {{this.name}} ${{this.price}} -
-        <a href="/products/{{this.id}}">Edit</a>
-        <a href="/products/{{this.id}}/delete">Delete</a>
+        {{this.dataValues.name}} -
+        <a href="/products/{{this.dataValues.id}}">Edit</a>
+        <a href="/products/{{this.dataValues.id}}/delete">Delete</a>
     </li>
     {{/each}}
 </ul>

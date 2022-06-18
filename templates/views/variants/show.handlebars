@@ -1,0 +1,17 @@
+{{> title}}
+
+{{> nav}}
+
+<ul>
+    <li>
+        <label>Id: </label> {{variant.dataValues.id}}
+        <label>Name: </label> {{variant.dataValues.name}}
+        <label>Product: </label> {{product.dataValues.name}}
+    </li>
+</ul>
+<p>
+    <a href="/variants/{{variant.dataValues.id}}/edit">Edit</a>
+    <a href="/variants/{{variant.dataValues.id}}/delete">Delete</a>
+</p>
+
+{{> footer}}

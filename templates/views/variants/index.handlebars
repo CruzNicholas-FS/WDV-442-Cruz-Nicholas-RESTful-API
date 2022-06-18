@@ -1,0 +1,18 @@
+{{> title}}
+
+{{> nav}}
+
+<h1>All Variants</h1>
+<ul>
+    {{#each variants}}
+    <li>
+        {{this.dataValues.name}} -
+        <a href="/variants/{{this.dataValues.id}}">Edit</a>
+        <a href="/variants/{{this.dataValues.id}}/delete">Delete</a>
+    </li>
+    {{/each}}
+</ul>
+
+<a href="/variants/new">Create Variant</a>
+
+{{> footer}}

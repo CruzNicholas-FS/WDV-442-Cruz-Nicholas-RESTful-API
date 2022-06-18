@@ -1,0 +1,20 @@
+<form method="POST" action="/images/{{#if image.dataValues.id}}{{image.dataValues.id}}{{/if}}">
+
+    {{#if image.dataValues.id}}
+    <input type="hidden" name="id" value="{{image.dataValues.id}}" />
+    {{/if}}
+    <div>
+        <label>Variant:</label>
+        <select name="variantId">
+            {{#each variants}}
+            <option value="{{this.dataValues.id}}" {{#if (isEqual this.dataValues.id ../image.dataValues.variantId ) }}
+                selected {{/if}}>
+                {{this.dataValues.name}}
+            </option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>
