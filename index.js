@@ -33,7 +33,6 @@ app.get("/", (req, res)=>{
         title:"Home",
         browser:"Home",
         stylesheet:"./public/app.css",
-        app:"./public/app.js"
     });
 })
 
@@ -43,7 +42,6 @@ app.get("/about", (req, res)=>{
         title:"About",
         browser:"About",
         stylesheet:"./public/app.css",
-        app:"./public/app.js"
     })
 })
 
