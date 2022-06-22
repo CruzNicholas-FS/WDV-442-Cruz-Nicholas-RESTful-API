@@ -1,0 +1,32 @@
+<div class="page-container">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <h1 class="page-title">Team Liquid Store</h1>
+
+    <div class="products-container">
+        {{#each products as |product|}}
+        <div class="product-image">
+            <a href="/store/products/{{product.slug}}">
+                {{#each product.Variants as |variant current|}}
+                {{#if (sameProduct product.Variants current)}}
+                {{#each variant.Images as |image i|}}
+                <img class="pic-{{i}}" src="../../../public/images/{{image.id}}{{image.extension}}" alt="" width="200"
+                    height="100" />
+                {{/each}}
+                {{/if}}
+                {{/each}}
+            </a>
+            <ul>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+            <span class="new-product-label">New</span>
+        </div>
+        <div class="product-info">
+            <h3><a href="/store/products/{{product.slug}}">{{product.name}}</a></h3>
+            <div class="price">
+                ${{product.price}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
