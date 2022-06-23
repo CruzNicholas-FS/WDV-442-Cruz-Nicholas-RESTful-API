@@ -8,9 +8,9 @@ const [ createdAt, updatedAt ] = [ new Date(), new Date() ]
 module.exports = {
   async up (queryInterface, Sequelize) {
     return await queryInterface.bulkInsert('Variants', [
-      { id: 1, name: 'With sponsors', slug: 'with-sponsors', description, price: 60.00, productId: 1, inventory: 2, createdAt, updatedAt  },
+      { id: 1, name: 'With sponsors', slug: 'with-sponsors', description, price: 70.00, productId: 1, inventory: 2, createdAt, updatedAt  },
 
-      { id: 2, name: 'Without sponsors', slug: 'without-sponsors', description, price: 70.00, productId: 1, inventory: 24, createdAt, updatedAt  },
+      { id: 2, name: 'Without sponsors', slug: 'without-sponsors', description, price: 60.00, productId: 1, inventory: 24, createdAt, updatedAt  },
 
       { id: 3, name: 'Short sleeved', slug: 'short-sleeved', description, price: 25.00, productId: 2, inventory: 0, createdAt, updatedAt  },
 

@@ -13,7 +13,7 @@ module.exports = {
         id: 1, 
         name: 'Team Liquid 2022 Jersey', 
         slug: 'team-liquid-2022-jersey', 
-        price: 60.00, 
+        price: 70.00, 
         is_published: true,
         description, createdAt, updatedAt
       },

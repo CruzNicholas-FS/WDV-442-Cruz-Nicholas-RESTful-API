@@ -23,6 +23,11 @@ const hbs = hb.create({
                 return true;
             }
         },
+        lessThan: (inventory, minStock) =>{
+            if (inventory < minStock) {
+                return true;
+            }
+        },
         sameProduct: (variant, index)=>{
             if (variant[index-1]===undefined) {
                 return true;

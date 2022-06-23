@@ -6,7 +6,7 @@ const index = async (req, res) => {
             {model: Variant, include:[Image]}
         ]
     })
-    res.render("store/index", {products, "browser":"All Products", "stylesheet":"../public/app.css"})
+    res.render("store/index", {products, "browser":"All Products", "stylesheet":"/public/app.css"})
 }
 
 const show = async (req, res)=>{
@@ -15,14 +15,14 @@ const show = async (req, res)=>{
         include:[
             {model:Variant, include:[Image]}
         ]
-    })
+    });
 
-    let variant = product.Variants[0];
-    if (req.query.v) {
-        variant=product.Variants.find(v=>v.slug===req.query.v)
-    }
+   let variant = product.Variants[0];
+   if (req.query.v) {
+       variant=product.Variants.find(v=>v.slug===req.query.v)
+   }
 
-    res.render("store/show", {product, variant, "browser":product.name, "stylesheet":"../public/app.css"})
+    res.render("store/show", {product, variant, "browser":product.name, "stylesheet":"/public/app.css"})
 }
 
 module.exports={
