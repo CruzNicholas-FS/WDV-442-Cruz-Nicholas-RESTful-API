@@ -40,12 +40,14 @@
             <div class="stock">
                 <h5 class="stock-label">Stock:</h5>
                 <span class="stock-notice">
-                    {{#if (lessThan variant.inventory 10)}}
-                    Low Stock
-                    {{else if (isEqual variant.inventory 0)}}
+                    {{#if (isEqual variant.inventory 0)}}
                     Out of Stock
                     {{else}}
+                    {{#if (lessThan variant.inventory 10)}}
+                    Low Stock
+                    {{else}}
                     In Stock
+                    {{/if}}
                     {{/if}}
                 </span>
             </div>
