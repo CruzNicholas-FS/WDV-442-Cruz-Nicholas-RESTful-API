@@ -1,0 +1,36 @@
+<div class="page-container">
+    {{> nav}}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <div class="products-container">
+        {{#each products as |product|}}
+        <div class="product">
+            <div class="image-container">
+                <div class="product-image">
+                    <a href="/store/products/{{product.slug}}">
+                        {{#each product.Variants as |variant current|}}
+                        {{#if (sameProduct product.Variants current)}}
+                        {{#each variant.Images as |image i|}}
+                        <img class="pic-{{i}}" src="../../../public/images/{{image.id}}{{image.extension}}" alt=""
+                            width="200" height="100" />
+                        {{/each}}
+                        {{/if}}
+                        {{/each}}
+                    </a>
+                </div>
+            </div>
+            <span class="new-product-label">New</span>
+            <ul class="icons">
+                <li class="shopping-icon"><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                <li class="shopping-icon"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+            <div class="product-info">
+                <h3><a href="/store/products/{{product.slug}}" class="product-link">{{product.name}}</a></h3>
+                <div class="price">
+                    ${{product.price}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

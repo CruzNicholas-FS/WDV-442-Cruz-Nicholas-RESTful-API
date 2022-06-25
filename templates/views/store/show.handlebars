@@ -1,0 +1,63 @@
+<div class="page-container">
+    {{> nav}}
+
+    <div class="specific-product-container">
+        <div class="image-gallery-container">
+            <div class="image-gallery">
+                <img src="/public/images/{{variant.Images.[0].id}}{{variant.Images.[0].extension}}" alt="" width="400"
+                    height="200" />
+                <div class="image-select">
+                    {{#each variant.Images as |image|}}
+                    <a href="#">
+                        <div class="gallery-bg">
+                            <img class="view-images" src="/public/images/{{image.id}}{{image.extension}}" alt=""
+                                width="100" height="50">
+                        </div>
+                    </a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="specific-product-info">
+            <h2><a href="#" class="name">{{product.name}} - {{variant.name}}</a></h2>
+            <p class="description">{{product.description}}</p>
+            <div class="options-container">
+                <h5 class="options-label">Options:</h5>
+                <p>
+                    {{#each product.Variants as |option|}}
+                    {{#if (isEqual option.id variant.id)}}
+                    {{option.name}}
+                    {{else}}
+                    <a href="/store/products/{{../product.slug}}?v={{option.slug}}" class="option">{{option.name}}</a>
+                    {{/if}}
+                    {{/each}}
+                </p>
+            </div>
+            <div class="price-container">
+                <h5 class="price-label">Price:</h5> <span class="variant-price">${{variant.price}}</span>
+            </div>
+            <div class="stock">
+                <h5 class="stock-label">Stock:</h5>
+                <span class="stock-notice">
+                    {{#if (isEqual variant.inventory 0)}}
+                    Out of Stock
+                    {{else}}
+                    {{#if (lessThan variant.inventory 10)}}
+                    Low Stock
+                    {{else}}
+                    In Stock
+                    {{/if}}
+                    {{/if}}
+                </span>
+            </div>
+            <div>
+                <label>Quantity:</label>
+                <input type="quantity" placeholder="1" class="quantity-input" />
+            </div>
+            <div>
+                <button type="button" class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

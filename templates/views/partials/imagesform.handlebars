@@ -1,4 +1,5 @@
-<form method="POST" action="/images/{{#if image.dataValues.id}}{{image.dataValues.id}}{{/if}}">
+<form enctype="multipart/form-data" method="POST"
+    action="/images/{{#if image.dataValues.id}}{{image.dataValues.id}}{{/if}}">
 
     {{#if image.dataValues.id}}
     <input type="hidden" name="id" value="{{image.dataValues.id}}" />
@@ -7,12 +8,14 @@
         <label>Variant:</label>
         <select name="variantId">
             {{#each variants}}
-            <option value="{{this.dataValues.id}}" {{#if (isEqual this.dataValues.id ../image.dataValues.variantId ) }}
-                selected {{/if}}>
-                {{this.dataValues.name}}
-            </option>
+            <option value="{{this.dataValues.id}}">{{this.dataValues.name}}</option>
             {{/each}}
         </select>
+    </div>
+    <div>
+        <label for="image">Upload Image:</label>
+        <br />
+        <input type="file" name="image" id="image" />
     </div>
     <div>
         <input type="submit" value="Submit" />
